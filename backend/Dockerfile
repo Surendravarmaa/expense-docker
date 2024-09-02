@@ -1,5 +1,7 @@
 FROM node:20.15.0-alpine3.20
 EXPOSE 8080
+# Install shadow package to get useradd command
+RUN apk add --no-cache shadow
 RUN useradd expense
 RUN mkdir /opt/server
 RUN chown expense:expense -R /opt/server
